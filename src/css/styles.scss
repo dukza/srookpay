@@ -1,0 +1,1169 @@
+
+
+@import url('./normalize.css');
+@import url('./all.css');
+@import url('./../icomoon/style.css');
+@import './short.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet');
+
+html{
+    font-size: 10px;
+    overflow-x: hidden;
+}
+body{
+    font-size: 1.6rem;
+    font-family: 'Noto Sans KR', sans-serif !important;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.1px;
+    margin: 0;
+    overflow-x: hidden;
+}
+.font-num{
+    font-family: 'Roboto',sans-serif;
+}
+
+// 폰트
+.text{
+	&-ink{
+		color: $ink;
+	}
+	&-black{
+		color: $ink;
+	}
+	&-body{
+		color: $body !important;
+    }
+	&-bodyLighter{
+		color: $bodyLighter;
+    } 
+	&-bodyDarken{
+		color: $bodyDarken;
+    }
+      
+	&-mute{
+		color: $muted !important;
+    }    
+	&-form{
+		color: $form !important;
+    }     
+    &-border{
+		color: $border !important;
+    }  
+	&-lighter{
+		color: $lighter !important;
+    }  
+	&-light{
+		color: $light !important;
+    }  
+    &-brand-pink{
+        color: $brand-pink;
+    }  
+    &-brand-violet-light{
+        color: $brand-violet-light;
+    }  
+    &-primary{
+		color: $primary !important;
+    }       
+    &-white-50{
+		color: transparentize(#fff, .5) !important;
+    }  
+
+    
+}
+@mixin textAlign() {
+    &-center{
+        text-align: center;
+    } 
+    &-left{
+        text-align: left !important;
+    } 
+    &-right{
+        text-align: right;
+    }  
+    &-decoration-none{
+        text-decoration: none;
+    }  
+}
+.text{
+    @include textAlign()      
+}
+.font-weight{
+    &-light{
+        font-weight: $font-weight-light !important;
+    }
+    &-lighter{
+        font-weight: $font-weight-lighter !important;
+    }
+    &-normal{
+        font-weight: $font-weight-normal !important;
+    }
+    &-med{
+        font-weight: $font-weight-med !important;
+    }
+    &-bolder{
+        font-weight: $font-weight-bolder !important;
+    }
+    &-bold{
+        font-weight: $font-weight-bold !important;
+    }
+}
+// 텍스트
+.line{
+    &-10{
+        line-height:1;
+    }    
+    &-12{
+        line-height:1.2;
+    }
+    &-15{
+        line-height:1.5;
+    }   
+}
+.word-keep, .word-keep td{
+ word-break: keep-all;   
+}
+.white-nowrap, .white-nowrap td{
+    white-space: nowrap;
+}
+.text-decoration-underline{
+    text-decoration: underline !important;
+}
+.text-overflow-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    display: inline-block;
+    white-space: nowrap;
+}
+// 폰트
+@mixin fontSize() {
+    &-88{
+        font-size: 8.8rem;
+    } 
+    &-80{
+        font-size: 8rem;
+    } 
+    &-72{
+        font-size: 7.2rem;
+    } 
+    &-64{
+        font-size: 6.4rem;
+    } 
+    &-56{
+        font-size: 5.6rem;
+    } 
+    &-48{
+        font-size: 4.8rem;
+    } 
+    &-40{
+        font-size: 4rem;
+    } 
+    &-38{
+        font-size: 3.8rem;
+    } 
+    &-36{
+        font-size: 3.6rem;
+    } 
+    &-32{
+        font-size: 3.2rem !important;
+    } 
+    &-28{
+        font-size: 2.8rem;
+    } 
+    &-24{
+        font-size: 2.4rem;
+    } 
+    &-22{
+        font-size: 2.2rem !important;
+    } 
+    &-20{
+        font-size: 2rem !important;
+    }  
+    &-18{
+        font-size: 1.8rem !important;
+    }  
+    &-17{
+        font-size: 1.7rem !important;
+    }  
+    &-16{
+        font-size: 1.6rem !important;
+    } 
+    &-14{
+        font-size: 1.4rem !important;
+    } 
+    &-12{
+        font-size: 1.2rem;
+    } 
+    &-11{
+        font-size: 1.1rem;
+    }
+}
+.letter-spacing-h{
+    letter-spacing: -2px;
+}
+.font-12, .font-11{
+    font-family: '맑은고딕', 'Sans-serif' !important;
+}
+.font{
+    @include fontSize() 
+}
+// 배경
+.bg{
+	&-ink{
+		background-color: $ink !important;
+	}
+	&-black{
+		background-color: $ink !important;
+    }
+	&-dark{
+		background-color: $dark !important;
+	}
+	&-body{
+		background-color: $body !important;
+    }
+	&-muted{
+		background-color: $muted !important;
+    }    
+	&-form{
+		background-color: $form !important;
+    }     
+    &-border{
+		background-color: $border !important;
+    }  
+	&-lighter{
+		background-color: $lighter !important;
+    }  
+	&-light{
+		background-color: $light !important;
+    }   
+	&-white{
+		background-color: white !important;
+    }  
+    &-brand-dark{
+        background-color: $brand-dark !important;
+    } 
+    &-primary{
+		background-color: $primary !important;
+    }       
+    &-lighter-hover{
+        &:hover{
+            background-color: transparentize($ink, .95);  
+        }
+    } 
+
+}
+
+// 간격
+//md-m3-b 뷰-사이즈-방향
+@mixin marginStyle($value) {
+    margin: $value !important;
+    &-t{
+        margin-top: $value !important;
+    }
+    &-r{
+        margin-right: $value !important;
+    }
+    &-b{
+        margin-bottom: $value !important;
+    }
+    &-l{
+        margin-left: $value !important;
+    }
+    &-x{
+        margin-left: $value !important;
+        margin-right: $value !important;
+    }
+}      
+@mixin paddingStyle($value) {
+    padding: $value !important;
+    &-t{
+        padding-top: $value !important;
+    }
+    &-r{
+        padding-right: $value !important;
+    }
+    &-b{
+        padding-bottom: $value !important;
+    }
+    &-l{
+        padding-left: $value !important;
+    }
+    &-x{
+        padding-left: $value !important;
+        padding-right: $value !important;
+    }
+}  
+@mixin marginAutoStyle() {
+    &l-auto, &x-auto{
+        margin-left: auto !important;
+    }  
+    &r-auto, &x-auto{
+        margin-right: auto !important;
+    } 
+}
+@mixin paddingAutoStyle() {
+    &l-auto, &x-auto{
+        padding-left: auto !important;
+    }  
+    &r-auto, &x-auto{
+        padding-right: auto !important;
+    } 
+}
+// 간격
+@mixin marginHandle() { 
+    &0{
+        @include marginStyle(0rem);
+    }  
+    &2{
+        @include marginStyle(0.2rem);
+    } 
+    &4{
+        @include marginStyle(0.4rem);
+    }  
+    &8{
+        @include marginStyle(0.8rem);
+    } 
+    &10{
+        @include marginStyle(1rem);
+    } 
+    &12{
+        @include marginStyle(1.2rem);
+    }
+    &14{
+        @include marginStyle(1.4rem);
+    }  
+    &16{
+        @include marginStyle(1.6rem);
+    }
+    &18{
+        @include marginStyle(1.8rem);
+    }
+    &20{
+        @include marginStyle(2rem);
+    }  
+    &24{
+        @include marginStyle(2.4rem);
+    }  
+    &28{
+        @include marginStyle(2.8rem);
+    } 
+    &32{
+        @include marginStyle(3.2rem);
+    } 
+    &36{
+        @include marginStyle(3.6rem);
+    } 
+    &40{
+        @include marginStyle(4rem);
+    } 
+    &48{
+        @include marginStyle(4.8rem)
+    }  
+    &56{
+        @include marginStyle(5.6rem)
+    }  
+    &64{
+        @include marginStyle(6.4rem);
+    }  
+    &68{
+        @include marginStyle(6.8rem);
+    }  
+    &72{
+        @include marginStyle(7.2rem);
+    }
+    &84{
+        @include marginStyle(8.4rem);
+    } 
+    &88{
+        @include marginStyle(8.8rem);
+    } 
+    &96{
+        @include marginStyle(9.6rem);
+    } 
+    &100{
+        @include marginStyle(10rem);
+    } 
+    &112{
+        @include marginStyle(11.2rem);
+    } 
+    &144{
+        @include marginStyle(14.4rem);
+    } 
+    &156{
+        @include marginStyle(15.6rem);
+    }     
+    &188{
+        @include marginStyle(18.8rem);
+    } 
+    &200{
+        @include marginStyle(20rem);
+    } 
+    &240{
+        @include marginStyle(24rem);
+    }  
+    @include marginAutoStyle();
+}
+.p8-h td,.p8-h{
+    padding-top: .8rem !important;
+    padding-bottom: .8rem !important;
+}
+.p10-h td,.p10-h{
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+.p12-h td, .p12-h{
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+}
+.p14-h td, .p14-h{
+    padding-top: 1.4rem !important;
+    padding-bottom: 1.4rem !important;
+}
+.p16-h td, .p16-h{
+    padding-top: 1.6rem !important;
+    padding-bottom: 1.6rem !important;
+}
+.p20-h td, .p20-h{
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+.p24-h td, .p24-h{
+    padding-top: 2.4rem !important;
+    padding-bottom: 2.4rem !important;
+}
+
+.m{
+   @include marginHandle() 
+}
+
+@mixin paddingHandle() {
+    &0{
+        @include paddingStyle(0rem);
+    }  
+    &2{
+        @include paddingStyle(0.2rem);
+    } 
+    &4{
+        @include paddingStyle(0.4rem);
+    } 
+    &8{
+        @include paddingStyle(0.8rem);
+    } 
+    &10{
+        @include paddingStyle(1rem);
+    } 
+    &12{
+        @include paddingStyle(1.2rem);
+    }   
+    &14{
+        @include paddingStyle(1.4rem);
+    }  
+    &16{
+        @include paddingStyle(1.6rem);
+    } 
+    &18{
+        @include paddingStyle(1.8rem);
+    }     
+    &20{
+        @include paddingStyle(2rem);
+    } 
+    &24{
+        @include paddingStyle(2.4rem);
+    } 
+    &28{
+        @include paddingStyle(2.8rem);
+    } 
+    &32{
+        @include paddingStyle(3.2rem);
+    } 
+    &36{
+        @include paddingStyle(3.6rem);
+    } 
+    &40{
+        @include paddingStyle(4rem);
+    }  
+    &48{
+        @include paddingStyle(4.8rem);
+    } 
+    &56{
+        @include paddingStyle(5.6rem)
+    }   
+    &64{
+        @include paddingStyle(6.4rem);
+    }  
+    &72{
+        @include paddingStyle(7.2rem);
+    } 
+    &84{
+        @include paddingStyle(8.4rem);
+    } 
+    &88{
+        @include paddingStyle(8.8rem);
+    } 
+    &96{
+        @include paddingStyle(9.6rem);
+    } 
+    &112{
+        @include paddingStyle(11.2rem);
+    } 
+    &144{
+        @include paddingStyle(14.4rem);
+    }  
+    &156{
+        @include paddingStyle(15.6rem);
+    }    
+    &188{
+        @include paddingStyle(18.8rem);
+    }
+    &200{
+        @include paddingStyle(20rem);
+    } 
+    &240{
+        @include paddingStyle(24rem);
+    }  
+}
+.p{
+    @include paddingHandle()
+}
+
+//사이즈
+@mixin widthStyle() {
+    &-100{
+        width: 100%;
+    }
+    &v-100{
+        width: 100vw;
+        
+    }
+}   
+@mixin heightStyle() {
+    &-100{
+        height: 100%;
+    }
+    &v-100{
+        height: 100vh;
+    }
+}   
+.w{
+    @include widthStyle()
+}
+.h{
+    @include heightStyle()
+}  
+
+//보더
+.border{
+    border:1px solid $border;
+    &-bottom-black{
+        border-bottom:1px solid black !important;
+    }
+    &-bottom-muted{
+        border-bottom:1px solid $muted;
+    }
+    &-bottom-border{
+        border-bottom:1px solid $border;
+    }
+    &-formLight{
+        border:1px solid $formLight !important;
+    }
+    &-form{
+        border:1px solid $form !important;
+    }
+    &-bottom-form{
+        border-bottom:1px solid $form;
+    }
+    &-top-form{
+        border-top:1px solid $form;
+    }
+    &-brand-violet-main{
+        border:1px solid $brand-violet-main !important;
+    }
+}
+// 라운드
+.round{
+    &-10{
+        border-radius: 10rem!important;
+    }
+    &-6{
+        border-radius: 0.6rem!important;
+    }
+    &-pill{
+        border-radius: 50rem!important;
+    }
+}
+// 그림자
+
+.shadow{
+    &-5{
+        box-shadow: 0 5rem 5rem rgba(0,0,0,.06) !important;
+    }
+}
+//디스플레이
+@mixin displayStyle() {
+    &-inline-block{
+        display: inline-block !important;
+    }
+    &-block{
+        display: block;
+    }  
+    &-flex{
+        display: flex;
+        
+    }
+    &-grid{
+        display: grid;
+    }  
+    &-none{
+        display: none;
+    }  
+}
+.d{
+    @include displayStyle()
+}
+// 포지션
+@mixin positionStyle() {
+    &-relative{
+        position: relative !important;
+    }
+    &-absolute{
+        position: absolute !important;
+    }
+    &-sticky{
+        position: sticky !important;
+    }
+}
+.position{
+    @include positionStyle()
+}
+//플렉스
+@mixin alignStyle() {
+    &-items-center {
+        align-items: center!important;
+    }
+    &-items-end {
+        align-items: flex-end!important;
+    }
+}
+@mixin flexStyle() {
+    &-row {
+        flex-direction:row!important;
+    }
+    &-column {
+        flex-direction:column!important;
+    }
+    &-nowrap {
+        flex-wrap: nowrap!important;
+    }   
+
+}
+ 
+.flex{
+    @include flexStyle()
+}
+.align{
+    @include alignStyle()
+}
+
+@mixin justifyStyle() {
+    &-content-center{
+        justify-content: center;
+    }
+}
+.justify{
+    @include justifyStyle()
+}
+.overflow-hidden{
+    overflow: hidden;
+}
+//버튼
+a:not([role="button"]){
+    &:hover{
+        color: $black; 
+    }
+}
+.sBtn{
+    cursor:pointer !important;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: .7rem 1.2rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+    &-sm{
+        padding: 1.2rem 2rem;
+    }
+    &-lg{
+        padding: 1.2rem 2rem;
+    }
+}
+.btn-check:focus+.sBtn, .sBtn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+}
+a[role="button"].bg-brand-violet-main, button.bg-brand-violet-main{
+    &:hover{
+        background-color: $brand-violet-hover !important;
+    }
+} 
+a[role="button"].bg-border,button.bg-border{
+    &:hover{
+        background-color: $form !important;
+    }   
+}
+.hover-black{
+    &:hover{
+        background-color: transparentize($black, 0.95);
+    }
+}
+.hover-brand-violet-main{
+    &:hover{
+        background-color: transparentize($brand-violet-main, 0.95);
+    }
+}
+//엘리먼트
+// 내비
+.nav-link{
+    cursor: pointer !important;
+}
+// 아이콘
+.i.font-11, .i.font-12{
+    font-family: 'Font Awesome 5 Brands' !important;
+}
+// 인디케이터
+.indicator{
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+}
+.pagination{
+    .btn{
+        color: $muted;
+    }
+    .active{
+        text-decoration: underline;
+        color: $black;
+    }
+}
+// 폼
+// form-control::placeholder
+.form-radio-bg {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: url("./../images/radio.png") no-repeat 0px 0px;
+    background-size: 24px auto;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    // padding-right: 1.25rem !important; 
+    transition: all .2s;
+    &:checked{
+        background: url("./../images/radio-on.png") no-repeat 0px 0px;
+        background-size: 24px auto;        
+    }
+}
+  
+.form-check-bg {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: url("../images/checkbox.png") no-repeat 0px 0px;
+    background-size: 24px auto;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    // padding-right: 1.25rem !important; 
+    &:checked{
+        background: url("../images/checkbox-on.png") no-repeat 0px 0px;
+        background-size: 24px auto;        
+    }
+}
+.form-select-bg{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../images/angle-down-light.svg") no-repeat 90% 50%; 
+    background-size: 12px auto;
+}
+
+.form-select-bg-light{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../images/angle-down-light-light.svg") no-repeat 100% 50%; 
+    background-size: 12px auto;
+}
+
+
+// 테이블
+.stable{
+    border-top: 1px solid $form;
+    td{
+        padding: .5rem .5rem;
+    }
+}
+.stable>:not(caption)>*>*{
+    border-bottom: 1px solid $form;
+}
+.stable thead{
+    color: $body;
+    background-color: $lighter;
+}
+.table {
+    margin-bottom: 0 !important;
+}
+
+
+// 모달
+.modal{
+    .modal-dialog{
+        width: 100%;
+        height: 100%;
+        margin: 0px auto;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        align-items: center;        
+    }
+
+    .modal-content{
+        top: 0px;
+        bottom: 0px;
+        .modal-header{
+            border-bottom: none !important;
+            padding: 2rem 2rem 1rem 2rem; 
+            .btn-close{
+                width: 1rem;
+                height: 1rem;
+                background-size: 100%;
+            }  
+        }
+        .modal-title{
+            font-size: 2rem;
+            width: 100%;
+            text-align: center;
+        }        
+        .modal-body{
+            padding: 4rem 1.6rem 4rem 1.6rem;
+            text-align: center;
+            overflow: auto;
+        }
+        .modal-con{
+            text-align: center;
+            min-height: 9.6rem;
+        }
+        .modal-footer{
+            text-align: center;
+            padding: 0rem 2rem 6rem 2rem;
+            justify-content: center;
+            border-top: none;
+            .btn{
+                font-weight: 400 !important;
+            }
+        }        
+    }
+
+} 
+// 기타
+.sNavLine{
+    .line{
+        position: relative;
+        &::after{
+            content: '';
+            background-color: $bodyDarken;
+            display: inline-block;
+            width: 0.1rem;
+            height: 1.2rem;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -0.6rem;
+        }
+    }
+}
+// 정렬
+@mixin verticalStyle() {
+    &-middle{
+        vertical-align: middle;
+        td{
+            vertical-align: middle;
+        }
+    }
+}
+.overflow-x-auto{
+    overflow-x:auto;
+}
+.overflow-x-hidden{
+    overflow-x:hidden;
+}
+// 링크
+.sLink{
+    position: relative;
+    cursor: pointer;
+}
+.sLink .line{
+    display: inline-block;
+    width: 100%;
+    height: 1px;   
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background-color: $border; 
+}
+.sLink .line::after{
+    content: '';
+    display: inline-block;
+    width: 0%;
+    height: 1px;   
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    background-color: $dark;   
+    transition: all 0.2s;
+}
+.sLink{
+    &:hover{
+        .line::after{
+            width: 100%;         
+        }
+    }
+}
+// 커서
+.cursor{
+    &-pointer{
+        cursor:pointer;
+    }
+}
+// 애니메이션
+@keyframes rotateStyle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes text-move {
+    from {
+        transform: translate3d(0%,0,0);
+    }
+    to {
+        transform: translate3d(-100%,0,0);
+    }
+}
+@keyframes no-transform{
+	100%{
+		opacity: 1;
+		transform: none;
+	}
+}
+// 레이아웃
+@mixin commonStyle() {
+    &-font{
+        @include fontSize();
+    }
+    &-m{
+        @include marginHandle()  
+    }
+    &-p{
+        @include paddingHandle()  
+    } 
+    &-w{
+        @include widthStyle()
+    }
+    &-h{
+        @include heightStyle()
+    }   
+    &-text{
+        @include textAlign()   
+    }
+    &-d{
+        @include displayStyle()
+    }
+    &-align{
+        @include verticalStyle()
+    }
+    &-flex{
+        @include flexStyle()
+    }
+    &-position{
+        @include positionStyle()
+    }
+    
+}
+
+
+//모바일
+@media (max-width: 576px) {
+    body{
+        font-size: 1.4rem;
+    }
+    .contain {
+        width: calc(100vw - 3.5rem);
+    }
+    .xs{
+        @include commonStyle()
+    }   
+}
+@media (min-width: 576px) {
+    .contain {
+        width: calc(100vw - 14rem);
+    }
+    .sm{
+        @include commonStyle()
+    }      
+}
+// 패드
+@media (min-width: 768px) {
+    .contain {
+        width: calc(100vw - 14rem);
+    }
+    .md{
+        @include commonStyle()
+    }
+}
+//웹
+@media (min-width: 992px) {
+    .contain {
+        width: calc(100vw - 11rem);
+    }
+    .lg{
+        @include commonStyle()
+    }
+}
+@media (min-width: 1200px) { 
+    .contain {
+        width: calc(100vw - 18rem);
+    }
+    .xl{
+        @include commonStyle()
+    }
+}
+@media (min-width: 1400px) {
+    .contain {
+        width: calc(100vw - 36rem);
+        max-width: 1560px;
+    }
+}
+@media (max-width: 576px) {
+    .modal-body{
+        padding: 4rem 2rem 4rem 2rem;   
+    } 
+}
+
+/* 웹 */
+@media (min-width: 992px) {
+    // 모달
+    .modal-dialog{
+        position: relative;
+    }
+    .modal-content.position-absolute{
+        top: 50px !important;
+        bottom: 50px !important;        
+    }    
+    .modal-body{
+        padding: 4rem 6rem 4rem 6rem !important;
+    }
+}
+
+//상단
+// #header{
+//     width: 100%;
+//     position: relative;
+//     #nav{
+//         display: flex;
+//         align-items: center;
+//         width: 100%;
+//         .logo{
+//             font-weight: $font-weight-med;
+//             text-decoration: none;
+//             color: $ink;
+//         }
+//         .menu{
+//             margin-left: auto;
+//         }        
+//     }
+//     #nav-web{
+//         position: absolute;
+//         top: 0px;
+//         right: 0px;
+//         display: flex;
+//         align-items: center;
+//         margin-left: auto;
+//         a{
+//             font-weight: $font-weight-med;
+//             text-decoration: none;
+//         }
+//         //a:not(:last-child)
+//         a:last-child{
+//             margin-right: 0;
+//         }
+//     }    
+// }
+
+// @media (max-width:576px) { 
+
+//     #nav{
+//         height: 4.5em;
+//         .logo{
+//             font-size: 1.75rem;
+//         }
+//         .menu {
+//             font-size: 1.5rem;
+//             visibility: visible;
+//         } 
+//     }
+//     #nav-web{
+//         visibility: hidden;
+//     }
+// }
+// @media (min-width:576px) {
+
+//     #nav{
+//         height: 6em;
+//         .logo{
+//             font-size: 2.5rem;
+//         }
+//         .menu {
+//             font-size: 1.75rem;
+//             visibility: visible;
+//         } 
+//     }
+//     #nav-web{
+//         visibility: hidden;
+//     }
+// }
+// @media (min-width: 768px) {
+
+//     #nav{
+//       .menu {
+//         visibility: visible;
+//       } 
+//     }
+// }
+// @media (min-width: 992px) {
+
+//     #nav{
+//         .menu {
+//             visibility: hidden;
+//         } 
+//     }
+//     #nav-web{
+//         visibility: visible;
+//         height: 6em;
+//         a{
+//             font-size: 1rem;
+//             margin-right: 2em;
+//         }        
+//     }  
+// }

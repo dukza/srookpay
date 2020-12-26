@@ -1,0 +1,266 @@
+@charset "UTF-8";
+body {
+  background-position: center top;
+}
+
+.sTop {
+  background-repeat: no-repeat;
+  background-position: -250px bottom;
+  background-size: auto 70%;
+}
+
+.sTop .sWheel {
+  position: absolute;
+  top: -6rem;
+  right: -2rem;
+  width: 20rem;
+  height: 20rem;
+  background-image: url("./../images/top-wheel.png");
+  background-size: cover;
+  -webkit-animation: rotateStyle 10s linear infinite;
+          animation: rotateStyle 10s linear infinite;
+}
+
+.sTop .btn-docuDown {
+  width: 26rem;
+}
+
+.sTopH {
+  height: 100vh;
+}
+
+.sTopImg {
+  width: 100%;
+}
+
+.sSrookPay .text-brand {
+  color: #ed3b65;
+}
+
+.sSrookPay .sMockupWrap {
+  background-color: #ef3d4a;
+  background-image: url("./../images/srookPay-bg@2x.png"), -webkit-gradient(linear, left top, right top, from(#fc9342), color-stop(#ef3d4a), to(#ef3d4a));
+  background-image: url("./../images/srookPay-bg@2x.png"), linear-gradient(to right, #fc9342, #ef3d4a, #ef3d4a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sSrookPay .line::after {
+  background-color: #ffebf3;
+}
+
+.sLinkon .text-brand {
+  color: #b51bfd;
+}
+
+.sLinkon .sMockupWrap {
+  background-color: #8e0fe2;
+  background-image: url("./../images/linkon-bg@2x.png"), -webkit-gradient(linear, right top, left top, from(#8e0fe2), color-stop(#8e0fe2), to(#d455e5));
+  background-image: url("./../images/linkon-bg@2x.png"), linear-gradient(to left, #8e0fe2, #8e0fe2, #d455e5);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sLinkon .line::after {
+  background-color: #f5e4ff;
+}
+
+.sCelebmanage .text-brand {
+  color: #00bbdd;
+}
+
+.sCelebmanage .sMockupWrap {
+  background-color: #0e1174;
+  background-image: url("./../images/celebmanage-bg@2x.png"), -webkit-gradient(linear, right top, left top, from(#0e1174), color-stop(#0e1174), to(#00449a));
+  background-image: url("./../images/celebmanage-bg@2x.png"), linear-gradient(to left, #0e1174, #0e1174, #00449a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sCelebmanage .line::after {
+  background-color: #e3fbff;
+}
+
+footer {
+  margin-top: 20rem !important;
+}
+
+footer a {
+  color: #898888;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #BEBEBE !important;
+}
+
+footer a.active {
+  color: #efefef;
+}
+
+.sSectionH {
+  height: auto;
+  padding-top: 10rem;
+}
+
+.sMockup {
+  padding-top: 15rem;
+}
+
+.sLinkon .sMockup {
+  padding-top: 20rem;
+}
+
+.sMockupWrapL {
+  border-top-right-radius: 18rem;
+}
+
+.sMockupWrapR {
+  border-top-left-radius: 18rem;
+}
+
+.sMockupWrap {
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.sMockupWraper {
+  height: 54.4rem;
+  padding-top: 6.4rem;
+}
+
+footer {
+  margin-top: 30rem !important;
+}
+
+.eLine {
+  position: relative;
+}
+
+.eLine .line {
+  position: absolute;
+  width: 100%;
+  height: 16px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+}
+
+.eLine .line::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.eText {
+  -webkit-animation: text-move 18s linear infinite;
+          animation: text-move 18s linear infinite;
+}
+
+.eText span {
+  font-size: 21rem;
+  margin-right: 48rem;
+  color: #f3f4f5;
+  font-weight: bolder;
+  line-height: 1;
+  letter-spacing: -8px;
+}
+
+.eMockup {
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+@media (max-height: 415px) {
+  .sTopImg {
+    height: 100vh;
+    width: auto !important;
+  }
+  .sSrookPay .sMockupWrap {
+    background-position: -40rem top;
+  }
+}
+
+@media (min-width: 576px) {
+  .sMockup {
+    width: 45rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .sSrookPay .sMockupWrap {
+    background-position: -45rem top;
+  }
+  .sLinkon .sMockupWrap {
+    background-position: -40rem -10rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sSrookPay .sMockupWrap {
+    background-position: -40rem top;
+  }
+  .sLinkon .sMockupWrap {
+    background-position: -20rem -10rem;
+  }
+  .sLinkon.sSectionH {
+    padding-top: 25rem;
+  }
+  .sBtn-top {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .sMockupWrapL {
+    background-position: right top;
+  }
+  .sMockupWrapR {
+    background-position: left top;
+  }
+}
+
+/* 웹 */
+@media (min-width: 992px) {
+  body {
+    background-position: center top;
+  }
+  .container {
+    max-width: 1200px !important;
+  }
+  .sMockupWraper {
+    padding-top: 0rem;
+  }
+  .sSectionH {
+    height: 1000px;
+    padding-top: 18rem;
+  }
+  footer {
+    margin-top: 5rem;
+  }
+  .sTop {
+    background-image: url("./../images/top-bg@2x.png");
+    background-repeat: no-repeat;
+    background-position: 124px bottom;
+    background-size: auto 85%;
+  }
+  .sTopH {
+    height: 1000px;
+  }
+  .sLinkon .sMockup {
+    width: 56rem !important;
+  }
+  footer {
+    margin-top: 0rem;
+  }
+  .sBtn-top {
+    bottom: 450px;
+    right: 84px;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    z-index: 99;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .sCustomer {
+    margin-top: -6rem !important;
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- 스타일시트 -->
+        <link rel="stylesheet" href="./../src/css/layout.css">
+        <link rel="stylesheet" type="text/css" href="./../src/css/styles.css">
+        <!-- 부트스트랩 -->
+        <link href="./../src/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- <script src="./../src/js/scroll.js"></script> -->
+        <title>crumbs</title>
+        <style>
+            .eText{
+                font-size: 12rem;
+                animation: text-move 18s linear infinite;
+            }
+            @keyframes text-move {
+                from {
+                    transform: translate3d(0%,0,0);
+                }
+                to {
+                    transform: translate3d(-100%,0,0);
+                }
+            }
+            @media (max-width: 576px) {
+                .eText{
+                        font-size: 5.8rem;
+                }      
+            }
+            @media (min-width: 576px) {
+                .eText{
+                        font-size: 10rem;
+                }      
+            }
+            @media (min-width: 768px) {
+                .eText{
+                    font-size: 12rem;
+                }  
+            }
+            @media (min-width: 992px) {
+                .eText{
+                    font-size: 18rem;
+                }  
+            }
+        </style>
+    </head>
+    <body>
+        <div class="col-12 d-flex align-items-center overflow-hidden">
+            <div class="d-flex align-items-center white-nowrap eText">
+                <span class="font-weight-bolder m40-l">1BEGINNING OF MEN’S MAKEUP</span>
+                <span class="font-weight-bolder m40-l">2BEGINNING OF MEN’S MAKEUP</span>              
+            </div>
+            <div class="d-flex align-items-center white-nowrap eText">
+                <span class="font-weight-bolder m40-l">3BEGINNING OF MEN’S MAKEUP</span>
+                <span class="font-weight-bolder m40-l">4BEGINNING OF MEN’S MAKEUP</span>              
+            </div>
+        </div>
+        <div class="count">0</div>
+    </body>
+    <script>
+        (()=>{
+        Number.prototype.format = function(){
+            if(this==0) return 0;
+        
+            var reg = /(^[+-]?\d+)(\d{3})/;
+            var n = (this + '');
+        
+            while (reg.test(n)) n = n.replace(reg, '$1' + ',' + '$2');
+        
+            return n;
+        };
+        function countUp(count){
+            var div_by = 100,
+                speed = Math.round(count / div_by),
+                $display = $('.count'),
+                run_count = 1,
+                int_speed = 10;
+            
+            var int = setInterval(function() {
+                if(run_count < div_by){
+                $display.text(speed * run_count);
+                run_count++;
+                } else if(parseInt($display.text()) < count) {
+                var curr_count = parseInt($display.text()) + 1;
+                $display.text(curr_count.format());
+                } else {
+                clearInterval(int);
+                }
+            }, int_speed);
+            }
+            countUp(1209);            
+        })();
+
+    </script>
+</html>
