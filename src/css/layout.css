@@ -7,14 +7,15 @@ body {
   background-repeat: no-repeat;
   background-position: -250px bottom;
   background-size: auto 70%;
+  background-image: url("./../images/top-bg@2x.png");
 }
 
 .sTop .sWheel {
   position: absolute;
   top: -6rem;
   right: -2rem;
-  width: 20rem;
-  height: 20rem;
+  width: 16rem;
+  height: 16rem;
   background-image: url("./../images/top-wheel.png");
   background-size: cover;
   -webkit-animation: rotateStyle 10s linear infinite;
@@ -23,6 +24,13 @@ body {
 
 .sTop .btn-docuDown {
   width: 26rem;
+  margin-left: 1.6rem;
+}
+
+.sTop .sText {
+  line-height: 1.3;
+  font-size: 4.8rem;
+  margin-left: 1.6rem;
 }
 
 .sTopH {
@@ -48,6 +56,10 @@ body {
   background-color: #ffebf3;
 }
 
+.sSrookPay .sLogo img {
+  margin-top: 3rem;
+}
+
 .sLinkon .text-brand {
   color: #b51bfd;
 }
@@ -61,6 +73,15 @@ body {
 
 .sLinkon .line::after {
   background-color: #f5e4ff;
+}
+
+.sLinkon .sLogo img {
+  margin-top: 3rem;
+}
+
+.sLogo img {
+  margin-left: 1.6rem;
+  height: 2rem;
 }
 
 .sCelebmanage .text-brand {
@@ -78,8 +99,12 @@ body {
   background-color: #e3fbff;
 }
 
+.sCelebmanage .sLogo img {
+  margin-top: 3rem;
+}
+
 footer {
-  margin-top: 20rem !important;
+  margin-top: 20rem;
 }
 
 footer a {
@@ -124,10 +149,6 @@ footer a.active {
 .sMockupWraper {
   height: 54.4rem;
   padding-top: 6.4rem;
-}
-
-footer {
-  margin-top: 30rem !important;
 }
 
 .eLine {
@@ -202,14 +223,25 @@ footer {
     background-position: -20rem -10rem;
   }
   .sLinkon.sSectionH {
-    padding-top: 25rem;
+    padding-top: 7rem;
   }
   .sBtn-top {
     display: none;
   }
+  footer {
+    margin-top: 10rem;
+  }
 }
 
 @media (min-width: 768px) {
+  .sTop .sText {
+    line-height: 1.5;
+    font-size: 8rem;
+    margin-left: 1.6rem;
+  }
+  .sTop .btn-docuDown {
+    margin-left: 1.6rem;
+  }
   .sMockupWrapL {
     background-position: right top;
   }
@@ -233,8 +265,26 @@ footer {
     height: 1000px;
     padding-top: 18rem;
   }
-  footer {
-    margin-top: 5rem;
+  .sText.sBtn-top {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    font-size: 1.6rem;
+    font-weight: bolder;
+  }
+  .sLine {
+    background-color: black;
+    position: relative;
+    margin-left: 0.8rem;
+  }
+  .sLine::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    height: 3px;
+    width: 53px;
+    background-color: black;
   }
   .sTop {
     background-image: url("./../images/top-bg@2x.png");
@@ -242,23 +292,37 @@ footer {
     background-position: 124px bottom;
     background-size: auto 85%;
   }
+  .sTop .sText {
+    line-height: 1.5;
+    font-size: 8rem;
+    margin-left: 0rem;
+  }
+  .sTop .btn-docuDown {
+    margin-left: 0rem;
+  }
+  .sTop .sWheel {
+    width: 20rem;
+    height: 20rem;
+  }
   .sTopH {
     height: 1000px;
+  }
+  .sSrookPay .sText {
+    left: 0px;
   }
   .sLinkon .sMockup {
     width: 56rem !important;
   }
   footer {
-    margin-top: 0rem;
+    margin-top: 20rem;
   }
   .sBtn-top {
     bottom: 450px;
-    right: 84px;
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    right: 64px;
     z-index: 99;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
   }
   .sCustomer {
     margin-top: -6rem !important;

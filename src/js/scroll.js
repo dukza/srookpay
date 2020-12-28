@@ -1,10 +1,12 @@
 (()=>{
+    let btnTop = document.querySelector('.jBtn-top');
     let yOffset = 0; //pageYOffset
     let prevScrollHeight = 0; // 이전 스크롤 합
     let currentScene = 0; //활성화된 scene
     let enterNewScene = false; // 새로운 scene이 시작되는 순간
     const sceneInfo = [
         {
+
             //0
             type: "normal",
             scrollHeight: 0,
@@ -58,6 +60,7 @@
             }
         }                
     ];
+
     Number.prototype.format = function(){
         if(this==0) return 0;
     
@@ -68,42 +71,71 @@
     
         return n;
     };
-    function countUp(obj,count){
-        var div_by = 100,
-            speed = Math.round(count / div_by),
-            $display = obj,
-            run_count = 1,
-            int_speed = 5;
-        var int = setInterval(function() {
-            if(run_count < div_by){
-                var tempNum = speed * run_count;
-                $display.innerHTML = tempNum.format();
-                run_count++;
-            } else if(parseInt($display.innerHTML) < count) {
-                var curr_count = parseInt($display.innerHTML) + 1;
-                $display.innerHTML = curr_count.format();
-            } 
-            else {
-                clearInterval(int);
-            }
-        }, int_speed);
-        }
 
+    // function countUp(obj,count){
+    //     var maxCount = count,   // ex) maxCount = 1,000
+    //         speedArea = parseInt(maxCount * 0.90),   // 가속도 구간   ex) speedArea = 900
+    //         runCount = 0,   // 카운트값 
+    //         speed = 10;     // 속도로 쓸꺼임.
+
+    //     var int = setInterval(function() {
+    //         console.log('countup');
+    //         if(runCount < maxCount) {   // 카운트 값이 최대값 이전 이면   ex)  if( 카운트값 < 1,000 ) 일때만.
+    //             if(runCount < speedArea) {  // 카운트 값이 가속도 구간 이전이면   ex)  if( 카운트값 < 900)
+    //                 runCount = runCount + ( speedArea * ( speed / 100 ));  
+    //             }else {  // 카운트 값이 가속도구간 이상이면 1씩 증가 
+    //                 runCount++;
+    //             }
+    //             obj.innerHTML = runCount.format();
+    //         }else{  // 카운트값(runCount)이  maxCount 이면 실행 종료
+    //             clearInterval(int);
+    //         }
+    //     }, 5);
+    // }
+
+    function countUp(target_frame, target_number) {
+        this.count = 0; this.diff = 0;
+        this.target_count = parseInt(target_number);
+        this.target_frame = target_frame;
+        this.timer = null;
+        this.counter();
+    };
+
+    countUp.prototype.counter = function() {
+        var self = this;
+        this.diff = this.target_count - this.count;
+         
+        if(this.diff > 0) {
+            self.count += Math.ceil(this.diff / 5);
+        }
+         
+        this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+         
+        if(this.count < this.target_count) {
+            this.timer = setTimeout(function() { self.counter(); }, 20);
+        } else {
+            clearTimeout(this.timer);
+        }
+    };
+    
     //각 로딩, 리사이즈 시 scene을 셋팅
     function setLayout() {
+        
         // 1. sceneInfo[i].scrollHeight 기본값 설정
         for (let i = 0; i < sceneInfo.length; i++) {
             // 스크롤을 이용한 인터랙션 구현 / 자잘한 수정사항들 처리
             if (sceneInfo[i].type === "sticky") {
                 // 화면 높이 * heightNum
                 sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
+                // console.log('setLayOut() sticky :'  + sceneInfo[i].scrollHeight);
+                sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
             } else if (sceneInfo[i].type === "normal") {
                 // container 크기
-                sceneInfo[i].scrollHeight = sceneInfo[i].objs.container.offsetHeight;
+                sceneInfo[i].scrollHeight = sceneInfo[i].objs.container.scrollHeight;
+                // console.log('setLayOut() normal :' + i + ' / ' + sceneInfo[i].scrollHeight);
                 // console.log(sceneInfo[i].objs.container.offsetHeight)
             }
             // container 크기
-            sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
         }
 
         // 2. 현재 scene구하기: 현재 scene에 해당하는 애니메이션
@@ -164,6 +196,7 @@
     // }
     // 각 scene에서 움직임 선언
     function playAnimation() {
+        
         // 현재 scene의 변경 객체
         const objs = sceneInfo[currentScene].objs;
         // 현재 scene 적용 값
@@ -189,28 +222,24 @@
                 
 
                 // console.log(sceneInfo[1].objs.jCount01)
-                // countUp(sceneInfo[1].objs.jCount01,123153066); 
-                // countUp(sceneInfo[1].objs.jCount02,123153066);                
+                new countUp(sceneInfo[1].objs.jCount01,123153066); 
+                new countUp(sceneInfo[1].objs.jCount02,123153066);                
             }
-            if(scrollRatio > 0 && scrollRatio < 0.5){  
-                console.log('0')
-               sceneInfo[0].objs.btnTop.style.opacity = `0`; 
-            }else{
-                sceneInfo[0].objs.btnTop.style.opacity = `1`;
-                console.log('1')
-
-            }         
+            // if(scrollRatio < 0.5){  
+            //     // console.log('0')
+            //    sceneInfo[0].objs.btnTop.style.opacity = `0`; 
+            // }     
         break;
         case 1:
             // 탭
             if(scrollRatio > 0 && scrollRatio < 0.7){
                 sceneInfo[2].objs.jMockup.style.opacity = `0`;
-                sceneInfo[2].objs.jMockup.style.transform = `translateY(10rem)`;
+                sceneInfo[2].objs.jMockup.style.transform = `translateX(10rem)`;
             }else{
                 sceneInfo[2].objs.jMockup.style.opacity = `1`;
-                sceneInfo[2].objs.jMockup.style.transform = `translateY(-10rem)`;
-                // countUp(sceneInfo[2].objs.jCount01,223153066); 
-                // countUp(sceneInfo[2].objs.jCount02,223153066);                 
+                sceneInfo[2].objs.jMockup.style.transform = `translateX(-10rem)`;
+                new countUp(sceneInfo[2].objs.jCount01,123153066); 
+                new countUp(sceneInfo[2].objs.jCount02,123153066);                   
             }
         break;
         case 2:
@@ -221,8 +250,8 @@
             }else{
                 sceneInfo[3].objs.jMockup.style.opacity = `1`;
                 sceneInfo[3].objs.jMockup.style.transform = `translateY(-10rem)`;
-                // countUp(sceneInfo[3].objs.jCount01,323153066); 
-                // countUp(sceneInfo[3].objs.jCount02,323153066);                 
+                new countUp(sceneInfo[3].objs.jCount01,123153066); 
+                new countUp(sceneInfo[3].objs.jCount02,123153066);                    
             }
         break;
         }
@@ -235,6 +264,14 @@
         enterNewScene = false;
         //초기화
         prevScrollHeight = 0;
+        if(window.pageYOffset < sceneInfo[0].scrollHeight){
+            btnTop.style.opacity = '0';
+        }else{
+            btnTop.style.opacity = '1';
+        }
+        
+        // console.log('scrollLoop : ' + currentScene);
+        
         //스크롤을 이용한 인터랙션 구현 / 현재 활성시킬 씬 결정하기
         // 이전 스크롤 크기: currentScene가 0 이상일 때
         
@@ -276,14 +313,19 @@
         // 마무리 작업 / 버그 수정 1
         document.body.classList.remove('before-load');
         setLayout();
-  
+        btnTop.style.opacity = '0';
+        btnTop.addEventListener('click',function(e){
+            e.preventDefault();
+            window.scrollTo(0,0)
+        })
         window.addEventListener("scroll", () => {
           yOffset = window.pageYOffset;
+        //   console.log('event() scroll :');
           scrollLoop();
         });
 
         window.addEventListener('resize', () => {
-          if (window.innerWidth > 900) {
+          if (window.innerWidth > 400) {
             setLayout();
           }
         });
