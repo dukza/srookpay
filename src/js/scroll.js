@@ -217,13 +217,14 @@
                 sceneInfo[1].objs.jMockup.style.transform = `translateY(10rem)`;
                 
             }else{
-                sceneInfo[1].objs.jMockup.style.opacity = `1`;
-                sceneInfo[1].objs.jMockup.style.transform = `translateY(-10rem)`;
+                if(sceneInfo[1].objs.jMockup.style.opacity  != 1) { // jMockup 의 opacity 가 '0' 이면 jMockup의 애니메이션과 숫자 카운트를 실행
+                    sceneInfo[1].objs.jMockup.style.opacity = `1`;
+                    sceneInfo[1].objs.jMockup.style.transform = `translateY(-10rem)`;
+                    // console.log(sceneInfo[1].objs.jCount01)
+                    new countUp(sceneInfo[1].objs.jCount01,123153066); 
+                    new countUp(sceneInfo[1].objs.jCount02,123153066);                
+                } 
                 
-
-                // console.log(sceneInfo[1].objs.jCount01)
-                new countUp(sceneInfo[1].objs.jCount01,123153066); 
-                new countUp(sceneInfo[1].objs.jCount02,123153066);                
             }
             // if(scrollRatio < 0.5){  
             //     // console.log('0')
@@ -236,10 +237,13 @@
                 sceneInfo[2].objs.jMockup.style.opacity = `0`;
                 sceneInfo[2].objs.jMockup.style.transform = `translateX(10rem)`;
             }else{
-                sceneInfo[2].objs.jMockup.style.opacity = `1`;
-                sceneInfo[2].objs.jMockup.style.transform = `translateX(-10rem)`;
-                new countUp(sceneInfo[2].objs.jCount01,123153066); 
-                new countUp(sceneInfo[2].objs.jCount02,123153066);                   
+                if(sceneInfo[2].objs.jMockup.style.opacity  != 1) { // jMockup 의 opacity 가 '0' 이면 jMockup의 애니메이션과 숫자 카운트를 실행
+                    sceneInfo[2].objs.jMockup.style.opacity = `1`;
+                    sceneInfo[2].objs.jMockup.style.transform = `translateY(-10rem)`;
+                    // console.log(sceneInfo[1].objs.jCount01)
+                    new countUp(sceneInfo[2].objs.jCount01,123153066); 
+                    new countUp(sceneInfo[2].objs.jCount02,123153066);                
+                }                 
             }
         break;
         case 2:
@@ -248,10 +252,13 @@
                 sceneInfo[3].objs.jMockup.style.opacity = `0`;
                 sceneInfo[3].objs.jMockup.style.transform = `translateY(10rem)`;     
             }else{
-                sceneInfo[3].objs.jMockup.style.opacity = `1`;
-                sceneInfo[3].objs.jMockup.style.transform = `translateY(-10rem)`;
-                new countUp(sceneInfo[3].objs.jCount01,123153066); 
-                new countUp(sceneInfo[3].objs.jCount02,123153066);                    
+                if(sceneInfo[3].objs.jMockup.style.opacity  != 1) { // jMockup 의 opacity 가 '0' 이면 jMockup의 애니메이션과 숫자 카운트를 실행
+                    sceneInfo[3].objs.jMockup.style.opacity = `1`;
+                    sceneInfo[3].objs.jMockup.style.transform = `translateY(-10rem)`;
+                    // console.log(sceneInfo[1].objs.jCount01)
+                    new countUp(sceneInfo[3].objs.jCount01,123153066); 
+                    new countUp(sceneInfo[3].objs.jCount02,123153066);                
+                }                    
             }
         break;
         }
